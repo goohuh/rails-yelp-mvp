@@ -3,10 +3,11 @@
   <p><%= @restaurant.address %></p>
   <p><%= @restaurant.phone_number %></p>
   <p><%= @restaurant.category %></p>
-  <p><%= link_to "Back to list", restaurants_path %></p>
   <p><strong>Reviews</strong></p>
   <ul class="list-group">
-  <p><%= link_to "New review", new_restaurant_review_path(@restaurant) %></p>
+  <%# <p><%= link_to "New review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+  <%# <p><%= render "form", task: @review %>
+  <p><%= render :partial => "reviews/form" %></p>
     <% @restaurant.reviews.each do |review| %>
       <li class="list-group-item"><%= review.content %> - <%= review.rating %> / 5</li>
     <% end %>

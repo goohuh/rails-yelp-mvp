@@ -1,9 +1,12 @@
 <div class="container">
-  <ul>
+<ul class="list-group">
     <% @restaurants.each do |restaurant| %>
-      <%= link_to restaurant_path(restaurant) do %>
-        <li><%= restaurant.name %></li>
-      <% end %>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <%= link_to restaurant_path(restaurant), style: 'text-decoration: none' do %><%= restaurant.name %></div>
+        <% end %>
+      <span class="badge bg-primary rounded-pill"><%= restaurant.category %></span>
+    </li>
     <% end %>
   </ul>
 </div>

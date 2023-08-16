@@ -22,7 +22,7 @@
 
 Rails.application.routes.draw do
   resources :restaurants, { shallow: true } do
-    resources :reviews
+    resources :reviews, except: [:new]
   end
 end
 
